@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: SSH into server
-        run: ssh zahra@67.207.86.11
+        run: ssh -T zahra@67.207.86.11
 
       - name: Clone repo
         run: git clone git@github.com:zahradeenie/devops-practice.git
