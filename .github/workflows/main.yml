@@ -31,4 +31,5 @@ jobs:
           script: |
               cd devops-practice
               git pull
-              npm install      
+              npm install
+              npm run restart   
