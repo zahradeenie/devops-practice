@@ -22,17 +22,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Setup key
-        run: |
-          mkdir ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE }}" > ~/.ssh/id_rsa
-          chmod 0400 ~/.ssh/id_rsa
-
-      - name: SSH into server
-        env:
-          COMMAND: |
-            git clone git@github.com:zahradeenie/devops-practice.git
-            cd devops-practice
-            npm install
-        run: ssh -o "StrictHostKeyChecking=no" zahra@67.207.86.11 < $COMMAND
-
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: 67.207.86.11
+          username: zahra
+          key: ${{ secrets.SSH_PRIVATE }}
+          script: |
+              git clone git@github.com:zahradeenie/devops-practice.git
+              cd devops-practice
+              npm install      
