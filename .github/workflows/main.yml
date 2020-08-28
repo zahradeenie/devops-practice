@@ -25,7 +25,7 @@ jobs:
       - name: SSH into server
         run: ssh -T zahra@67.207.86.11
 
-      - name: Clone repo
+      - name: clone repo
         run: git clone git@github.com:zahradeenie/devops-practice.git
       
       - name: cd into repo
@@ -34,5 +34,5 @@ jobs:
       - name: install dependencies
         run: npm install
 
-      - name: cd into repo
-        run: cd devops-practice
+      - name: run the express server
+        run: node index.js
