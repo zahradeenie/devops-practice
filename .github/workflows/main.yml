@@ -26,6 +26,7 @@ jobs:
         run: |
           mkdir ~/.ssh
           echo "${{ secrets.SSH_PRIVATE }}" > ~/.ssh/id_rsa
+          chmod 0400 ~/.ssh/id_rsa
 
       - name: SSH into server
         run: ssh -o "StrictHostKeyChecking=no" zahra@67.207.86.11
