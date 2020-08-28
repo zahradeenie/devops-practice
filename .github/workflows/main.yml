@@ -34,5 +34,5 @@ jobs:
             git clone git@github.com:zahradeenie/devops-practice.git
             cd devops-practice
             npm install
-        run: ssh -o "StrictHostKeyChecking=no" zahra@67.207.86.11 < "$COMMAND"
+        run: ssh -o "StrictHostKeyChecking=no" zahra@67.207.86.11 < $COMMAND
 
