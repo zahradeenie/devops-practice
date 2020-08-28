@@ -29,6 +29,6 @@ jobs:
           username: zahra
           key: ${{ secrets.SSH_PRIVATE }}
           script: |
-              git clone git@github.com:zahradeenie/devops-practice.git
               cd devops-practice
+              git pull
               npm install      
